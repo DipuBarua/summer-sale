@@ -55,7 +55,7 @@
         </div>
     </header>
 
-    <main class="flex flex-col md:flex-row my-32">
+    <main class="flex flex-col md:flex-row my-32 gap-10">
 
         <section class="flex-1">
             <!-- Kitchenware -->
@@ -64,7 +64,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <!-- first card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="first-card-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod1.png" alt="K. Accessories" class="rounded-xl" />
                         </figure>
@@ -82,7 +82,7 @@
                     </div>
 
                     <!-- second card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="second-card-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod2.png" alt="K. Accessories" class="rounded-xl" />
                         </figure>
@@ -241,26 +241,29 @@
         </section>
 
 
-        <!-- Calculation Entry -->
+        <!-- Price Calculation Entry -->
         <section>
             <div>
-                <h2 class="font-medium">Have coupon?</h2>
-                <input class="p-2 ml-2 bg-card-bg-color rounded-md border" type="text" placeholder="Coupon code">
-                <button class="btn font-semibold bg-primary-color">Apply</button>
+                <h2 class="text-2xl font-medium">Have coupon?</h2>
+                <input id="coupon-code-field" class="p-2 ml-2 bg-card-bg-color rounded-md border" type="text" placeholder="Coupon code">
+                <button id="coupon-apply-btn" class="btn font-semibold bg-primary-color">Apply</button>
             </div>
 
-            <div>
+            <div id="add-card-field">
                 show add card
             </div>
 
-            <div>
-                <h3>Total Price : <span>00</span> </h3>
-                <h3>Discount : <span>00</span> </h3>
-                <h3>Price : <span>00</span> </h3>
+            <div class="text-2xl font-medium">
+                <h3>Total Price : <span id="total-price">00</span> Tk</h3>
+                <h3>Discount : <span id="total-discount">00</span> TK</h3>
+                <h3>Price : <span>00</span> TK</h3>
                 <button class="btn font-semibold bg-primary-color w-full">Make Purchase</button>
             </div>
         </section>
     </main>
+
+    <script src="js/price-calculation.js"></script>
+
 </body>
 
 </html>
