@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <!-- third card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="third-card-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod3.png" alt="Home Cooker" class="rounded-xl" />
                         </figure>
@@ -124,7 +124,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <!-- first card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="first-card-2div-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod4.png" alt="Sports Back Cap" class="rounded-xl" />
                         </figure>
@@ -142,7 +142,7 @@
                     </div>
 
                     <!-- second card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="second-card-2div-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod5.png" alt="Full Jersey Set" class="rounded-xl" />
                         </figure>
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                     <!-- third card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="third-card-2div-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod6.png" alt="Sports cates" class="rounded-xl" />
                         </figure>
@@ -184,7 +184,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <!-- first card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="first-card-3div-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod7.png" alt="Single Relax Chair" class="rounded-xl" />
                         </figure>
@@ -202,7 +202,7 @@
                     </div>
 
                     <!-- second card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="second-card-3div-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod8.png" alt="Children play" class="rounded-xl" />
                         </figure>
@@ -219,7 +219,7 @@
                         </div>
                     </div>
                     <!-- third card  -->
-                    <div class="card w-96 bg-base-100 shadow-xl">
+                    <div id="third-card-3div-field" class="card w-96 bg-base-100 shadow-xl">
                         <figure class="mx-10 mt-10 px-10 py-10 bg-card-bg-color rounded-lg">
                             <img src="images/prod9.png" alt="Flexible Sofa" class="rounded-xl" />
                         </figure>
@@ -242,28 +242,30 @@
 
 
         <!-- Price Calculation Entry -->
-        <section>
+        <section class="space-y-5">
             <div>
-                <h2 class="text-2xl font-medium">Have coupon?</h2>
+                <h2 class="text-2xl font-medium mb-3">Have coupon?</h2>
                 <input id="coupon-code-field" class="p-2 ml-2 bg-card-bg-color rounded-md border" type="text" placeholder="Coupon code">
                 <button id="coupon-apply-btn" class="btn font-semibold bg-primary-color">Apply</button>
             </div>
+            <hr>
 
             <div id="add-card-field">
-                show add card
             </div>
 
-            <div class="text-2xl font-medium">
-                <h3>Total Price : <span id="total-price">00</span> Tk</h3>
-                <h3>Discount : <span id="total-discount">00</span> TK</h3>
-                <h3>Price : <span>00</span> TK</h3>
-                <button class="btn font-semibold bg-primary-color w-full">Make Purchase</button>
+            <hr>
+            <div class="text-2xl font-medium space-y-2">
+                <h3>Total Price : <span id="total-price" class="text-price-color">00</span> Tk</h3>
+                <h3>Discount : <span id="total-discount" class="text-price-color">00</span> TK</h3>
+                <h3>Total : <span id="total" class="text-price-color">00</span> TK</h3>
+                <hr>
+                <button id="make-purchase-btn" class="btn font-semibold bg-primary-color w-full">Make Purchase</button>
             </div>
         </section>
     </main>
 
     <script src="js/price-calculation.js"></script>
-
+    <script src="js/utilities.js"></script>
 </body>
 
 </html>
