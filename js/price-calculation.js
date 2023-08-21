@@ -38,12 +38,14 @@ function addTotalPrice(newPrice) {
 
             if (couponCodeText === 'SELL200') {
                 document.getElementById('coupon-apply-btn').addEventListener('click', function() {
-                    const discount = newTotalPrice * 0.2;
+                    discount = newTotalPrice * 0.2;
                     const totalDiscountField = document.getElementById('total-discount');
                     totalDiscountField.innerText = discount.toFixed(2);
 
                     const newTotal = newTotalPrice - discount;
                     totalField.innerText = newTotal.toFixed(2);
+
+                    event.target.value = '';
                 })
             }
         })
