@@ -9,6 +9,7 @@ function addToCalculationField(cardName) {
     p.classList.add('font-medium');
 
     addCardField.appendChild(p);
+
 }
 
 function addTotalPrice(newPrice) {
@@ -38,7 +39,7 @@ function addTotalPrice(newPrice) {
 
             if (couponCodeText === 'SELL200') {
                 document.getElementById('coupon-apply-btn').addEventListener('click', function() {
-                    discount = newTotalPrice * 0.2;
+                    const discount = newTotalPrice * 0.2;
                     const totalDiscountField = document.getElementById('total-discount');
                     totalDiscountField.innerText = discount.toFixed(2);
 
@@ -53,4 +54,15 @@ function addTotalPrice(newPrice) {
     } else {
         couponApplyBtn.setAttribute('disabled', true);
     }
+
+    document.getElementById('go-home-btn').addEventListener('click', function() {
+        totalPrice.innerText = '00';
+        totalField.innerText = '00';
+        const totalDiscountArea = document.getElementById('total-discount');
+        totalDiscountArea.innerText = '00';
+
+        const addCard = document.getElementById('add-card-field');
+        addCard.removeChild(addCard.lastChild);
+
+    })
 }
