@@ -9,9 +9,10 @@ function addToCalculationField(cardName) {
     p.classList.add('font-medium');
 
     addCardField.appendChild(p);
-
 }
 
+
+// reuseable function to "calculate total price, discount, total"
 function addTotalPrice(newPrice) {
     const totalPrice = document.getElementById('total-price');
     const totalPriceString = totalPrice.innerText;
@@ -19,24 +20,27 @@ function addTotalPrice(newPrice) {
     const newTotalPrice = totalPriceValue + newPrice;
     totalPrice.innerText = newTotalPrice.toFixed(2);
 
+    // by default disable - makepurchase button
     const makePurchaseBtn = document.getElementById('make-purchase-btn');
-    if (newTotalPrice > 0) {
-        makePurchaseBtn.removeAttribute('disabled');
-    } else {
+    if (newTotalPrice <= 0) {
         makePurchaseBtn.setAttribute('disabled', true);
+    } else {
+        makePurchaseBtn.removeAttribute('disabled');
     }
 
+    // set total
     const totalField = document.getElementById('total');
     totalField.innerText = newTotalPrice;
 
     const couponApplyBtn = document.getElementById('coupon-apply-btn');
-
+    // validation-discount >> minimum purchasing price equal or more than 200.
     if (newTotalPrice >= 200) {
         couponApplyBtn.removeAttribute('disabled');
 
         document.getElementById('coupon-code-field').addEventListener('keyup', function(event) {
             const couponCodeText = event.target.value;
 
+            // function for apply coupon Button >> after using coupon code successfully.
             if (couponCodeText === 'SELL200') {
                 document.getElementById('coupon-apply-btn').addEventListener('click', function() {
                     const discount = newTotalPrice * 0.2;
@@ -55,6 +59,7 @@ function addTotalPrice(newPrice) {
         couponApplyBtn.setAttribute('disabled', true);
     }
 
+    // function for 'go home' button >> after successfully purchase.
     document.getElementById('go-home-btn').addEventListener('click', function() {
         totalPrice.innerText = '00';
         totalField.innerText = '00';
